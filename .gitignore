@@ -8,7 +8,7 @@ game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.PlayerList, tru
 local a = queue_on_teleport or syn.queue_on_teleport
 local b = game.Players.LocalPlayer
 local c = game:GetService("TweenService")
-a([[loadstring(game:HttpGet("https://raw.githubusercontent.com/Kelvinouo/Hub/master/skywars_autowin.lua", true))()]])
+a([[loadstring(game:HttpGet("https://pastebin.com/raw/q74y4q7K", true))()]])
 local d = Instance.new("ScreenGui")
 d.Name = "?"
 d.ResetOnSpawn = false
