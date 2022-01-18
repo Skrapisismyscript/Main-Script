@@ -1,3 +1,4 @@
+repeat wait() until game:IsLoaded()
 spawn (function()
 	print("Geting game")
 	wait(1)
@@ -12,13 +13,21 @@ spawn (function()
 	wait(2)
 	print("Loaded!")
 	print("Enjoy :D PinPoint#6969")
-	_G.farm = true
-	game:GetService("RunService").RenderStepped:Connect(function()
-		while _G.farm == true do
-			wait()
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.CFrame
-			fireclickdetector(game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.ClickDetector)
-		end
-	end)
+	if game.PlaceId == 4042427666 then
+		_G.farm = true
+		game:GetService("RunService").RenderStepped:Connect(function()
+			while _G.farm == true do
+				wait()
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.CFrame
+				fireclickdetector(game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.ClickDetector)
+			end
+		end)
+	elseif game.PlaceId == 8135501124 then
+		local pl = game.Players.LocalPlayer.Character
+
+		pl:MoveTo(game:GetService("Workspace")["Timer_Start"].Position)
+		wait()
+		pl:MoveTo(game:GetService("Workspace")["Timer_Pause"].Position)
+	end
 
 end)
