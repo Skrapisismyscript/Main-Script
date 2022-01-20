@@ -1,33 +1,60 @@
 repeat wait() until game:IsLoaded()
+  local id = game.PlaceId
 spawn (function()
-	print("Geting game")
-	wait(1)
-	print(game.PlaceId)
-	wait(1)
-	print("Getting character and userid")
-	wait(1)
-	print(game.Players.LocalPlayer)
-	print(game.Players.LocalPlayer.UserId)
-	wait(1)
-	print("Script is loading!")
-	wait(2)
-	print("Loaded!")
-	print("Enjoy :D PinPoint#6969")
-	if game.PlaceId == 4042427666 then
-		_G.farm = true
-		game:GetService("RunService").RenderStepped:Connect(function()
-			while _G.farm == true do
-				wait()
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.CFrame
-				fireclickdetector(game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.ClickDetector)
-			end
-		end)
-	elseif game.PlaceId == 8135501124 then
-		local pl = game.Players.LocalPlayer.Character
-
-		pl:MoveTo(game:GetService("Workspace")["Timer_Start"].Position)
-		wait()
-		pl:MoveTo(game:GetService("Workspace")["Timer_Pause"].Position)
-	end
-
+    	print("Geting game")
+    	wait(1)
+    	print(game.PlaceId)
+    	wait(1)
+    	print("Getting character and userid")
+    	wait(1)
+    	print(game.Players.LocalPlayer)
+    	print(game.Players.LocalPlayer.UserId)
+    	wait(1)
+    	print("Script is loading!")
+    	wait(2)
+    	print("Loaded!")
+    	print("Enjoy :D PinPoint#6969")
+    	if game.PlaceId == 4042427666 then
+    		_G.farm = true
+    		game:GetService("RunService").RenderStepped:Connect(function()
+    			while _G.farm == true do
+    				wait()
+    				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.CFrame
+    				fireclickdetector(game:GetService("Workspace").MouseIgnore.ChikaraCrate.ClickBox.ClickDetector)
+    			end
+    		end)
+    	elseif game.PlaceId == 8135501124 then
+    		local pl = game.Players.LocalPlayer.Character
+    
+    		pl:MoveTo(game:GetService("Workspace")["Timer_Start"].Position)
+    		wait()
+    		pl:MoveTo(game:GetService("Workspace")["Timer_Pause"].Position)
+    		repeat wait() until game:IsLoaded()
+    
+    elseif id == 1458767429 then
+        spawn (function()
+            game:GetService("RunService").RenderStepped:Connect(function()  
+                print("auto kill initiated")
+                task.wait()
+                game.Players.LocalPlayer.Character.Humanoid.Health = 0
+            end)
+        end)
+        game:GetService("RunService").RenderStepped:Connect(function()
+        print("Auto teleport intiated")
+        task.wait(200)
+        game:GetService("TeleportService"):Teleport(2008032602, game.Players.LocalPlayer)
+        end)
+    elseif id == 2008032602 then
+        game:GetService("RunService").RenderStepped:Connect(function()
+            print("Auto join into game initiated!!")
+            task.wait(2)
+            local args = {
+                [1] = true
+            }
+            
+            game:GetService("ReplicatedStorage").Place:FireServer(unpack(args))
+        end)
+    end
+            
 end)
+
