@@ -54,7 +54,175 @@ spawn (function()
             
             game:GetService("ReplicatedStorage").Place:FireServer(unpack(args))
         end)
-    end
+        elseif game.PlaceId == 3177438863 then
+spawn (function()
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+	local Window = Library.CreateLib("PinPoint Hub [🔥10X POWER!] Dragon Blox", "DarkTheme")
+	local Tab = Window:NewTab("Main 🙄")
+	local Section = Tab:NewSection("Down below are all the stuff, click them to use.")
+	Section:NewButton("Rejoin Game😁", "Rejoins game", function()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+	end)
+	Section:NewButton("Force Reset Character😂", "Forces your character to reset", function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end)
+	Section:NewButton("Invisibility Cheat(Recomended)😎", "makes u invisible so no one sees you!", function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1573.9082, 565.248413, 1271.72937, 0.981167018, 0.0114290854, -0.192822844, -0.0118412524, 0.999929428, -0.000985192601, 0.192797959, 0.00324990228, 0.98123312)
+		task.wait(1)
+		for i,v in pairs (game:GetService("Players").LocalPlayer.Character:GetDescendants()) do 
+			if v.Name == "Root" then
+				v:Destroy()
+			end
+		end
+	end)
+	Section:NewButton("Redeem Codes😊", "Redeems all the codes in games.", function()
+		--("Clicked the redeem codes button.")
+			local args = {
+				[1] = {
+					["UniqueTag"] = "RedeemCode",
+					["InputText"] = "January2022FREEREBIRTH!",
+					["InputType"] = "Text",
+					["LeftButton"] = "Redeem",
+					["Description"] = "Redeem Code",
+					["Prompt"] = "RedeemCode",
+					["RightButton"] = "Cancel",
+					["Title"] = "Codes"
+				},
+				[2] = "Redeem"
+			}
+
+			game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.Props.PromptService.Prompt:FireServer(unpack(args))
+			task.wait(1)
+			local args = {
+				[1] = {
+					["UniqueTag"] = "RedeemCode",
+					["InputText"] = "January2022FREESKILLRESET!",
+					["InputType"] = "Text",
+					["LeftButton"] = "Redeem",
+					["Description"] = "Redeem Code",
+					["Prompt"] = "RedeemCode",
+					["RightButton"] = "Cancel",
+					["Title"] = "Codes"
+				},
+				[2] = "Redeem"
+			}
+
+			game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.Props.PromptService.Prompt:FireServer(unpack(args))
+			
+	end)
+	getgenv().strength = false
+
+	Section:NewToggle("Autofarm strength😮", "Autofarm's Strength :)", function(state)
+		getgenv().strength = state
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if getgenv().strength then
+				--("Strength Toggled On")
+					local args = {
+						[1] = "Combat",
+						[2] = true,
+						[3] = CFrame.new(Vector3.new(1827.7650146484, 583.13201904297, 1268.0100097656), Vector3.new(0.84511774778366, -0.3167482316494, -0.43063503503799)),
+						[4] = CFrame.new(Vector3.new(1838.3289794922, 577.69268798828, 1262.6270751953), Vector3.new(0.89164888858795, 1.9323691091699e-08, -0.45272755622864)),
+						[5] = CFrame.new(Vector3.new(1833.9211425781, 574.75280761719, 1258.5329589844), Vector3.new(0.43763408064842, -0.59559738636017, -0.67360246181488)),
+						[7] = workspace:FindFirstChild("World Map").Islands:FindFirstChild("Kame Island").Island.Path.Part,
+						[8] = {
+							["Type"] = 0
+						}
+					}
+
+					game:GetService("ReplicatedStorage").Remotes.SkillRemote:FireServer(unpack(args))
+
+					task.wait()
+
+					local args = {
+						[1] = "Combat",
+						[2] = false,
+						[3] = CFrame.new(Vector3.new(1827.7650146484, 583.13201904297, 1268.0100097656), Vector3.new(0.84511774778366, -0.3167482316494, -0.43063503503799)),
+						[4] = CFrame.new(Vector3.new(1838.3289794922, 577.69268798828, 1262.6270751953), Vector3.new(0.89164888858795, -1.3407563059786e-08, -0.45272755622864)),
+						[5] = CFrame.new(Vector3.new(1833.9211425781, 574.75280761719, 1258.5329589844), Vector3.new(0.43763408064842, -0.59559738636017, -0.67360246181488)),
+						[7] = workspace:FindFirstChild("World Map").Islands:FindFirstChild("Kame Island").Island.Path.Part,
+						[8] = {
+							["Type"] = 1,
+							["Hit"] = {}
+						}
+					}
+
+					game:GetService("ReplicatedStorage").Remotes.SkillRemote:FireServer(unpack(args))
+								
+			else
+				--("Strength toggled off")
+			end
+		end)
+	end)
+	getgenv().time = false
+	Section:NewToggle("Spam teleport to Time Chamber🤣", "Keeps teleporting you to the time chamber", function(gamer)
+		getgenv().time = gamer
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if getgenv().time then
+				--("Toggle On Spam Time chamber teleporter")
+				game.Players.LocalPlayer.Character:MoveTo(game:GetService("Workspace")["World Map"]["Multiplier Zones"]["Floating Palace"]["Time Chamber"]["Time Chamber"]["Main Structure"]["Meshes/The better 2"].Position)
+			else
+				--("Toggle Off Spam teleport to Time Chamber")
+			end
+		end)
+	end)
+	getgenv().rebirth = false
+	Section:NewToggle("Auto Rebirth😶", "Automatically rebirths", function(reb)
+		getgenv().rebirth = reb
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if getgenv().rebirth then
+				--("Toggle On auto rebirth")
+				game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.StatsService.RebirthUp:FireServer()
+			else
+				--("Toggle Off auto rebirth")
+			end
+		end)
+	end)
+		getgenv().spr = false
+	Section:NewToggle("Auto Sprint😫", "Sprints automatically everytime", function(sprint)
+		getgenv().spr = sprint
+		game:GetService("RunService").RenderStepped:Connect(function()
+			if getgenv().spr then
+				local args = {
+					[1] = true
+				}
+
+				game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.Props.FlightService.Sprint:FireServer(unpack(args))
+			end
+		end)	
+	end)
+	local Section = Tab:NewSection("Put shortform of the form u wanna auto transform.")
+
+	Section:NewButton("Untransform😱", "Untransforms from your mode", function()
+		local args = {
+			[1] = "Off"
+		}
+
+		game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.Props.ModeTransformService.Transformation:FireServer(unpack(args))
+	end)		
+	getgenv().trans = false
+	Section:NewTextBox("Mode to transform 😪", "select mode u wanna auto transform (BETA)", function(txt)
+		print(txt)
+			 Section:NewToggle(txt.. " 😏", "auto transforms to : ".. txt, function(tran)
+		 	getgenv().trans = tran
+		 	game:GetService("RunService").RenderStepped:Connect(function()
+				if getgenv().trans then
+					print(txt)
+					local args = {
+						[1] = txt
+					}
+
+					game:GetService("ReplicatedStorage").Aero.AeroRemoteServices.Props.ModeTransformService.Transformation:FireServer(unpack(args))
+									
+				else
+					-- ok cool
+				end
+			end)
+		end)
+	end)
+
+end)
+
+     end
             
 end)
 
