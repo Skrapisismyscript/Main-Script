@@ -221,6 +221,67 @@ spawn (function()
 	end)
 
 end)
+elseif game.PlaceId == 6284583030 then
+spawn (function()
+	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+	local Window = Library.CreateLib("PinPoint Hub [👾 GLITCH] Pet Simulator X!", "DarkTheme")
+	local Tab = Window:NewTab("Tools 🙄")
+	local Section = Tab:NewSection("Down below are all the stuff, click them to use.")
+	Section:NewButton("Force Reset Character😂", "Forces your character to reset", function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end)
+	Section:NewButton("Rejoin Game😁", "Rejoins game", function()
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+	end)
+	Section:NewButton("Redeem codes", "Redeems all the available codes", function()
+			local args = {
+				[1] = {
+					[1] = "404roblox"
+				}
+			}
+
+			workspace.__THINGS.__REMOTES:FindFirstChild("redeem twitter code"):InvokeServer(unpack(args))
+            task.wait(0.5)
+            local args = {
+				[1] = {
+					[1] = "1Mfollowers"
+				}
+			}
+
+			workspace.__THINGS.__REMOTES:FindFirstChild("redeem twitter code"):InvokeServer(unpack(args))
+		
+	end)
+	Section:NewButton("Invisibility (SERVER SIDED)😎", "makes u invisible so no one sees you!", function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7.22901487, -495.650085, -16.4065838, 0.99999702, 3.00422656e-08, -0.00243705721, -2.99241911e-08, 1, 4.84857559e-08, 0.00243705721, -4.84126872e-08, 0.99999702)
+		task.wait(1)
+		for i,v in pairs (game:GetService("Players").LocalPlayer.Character:GetDescendants()) do 
+			if v.Name == "Root" then
+				v:Destroy()
+			end
+		end
+	end)
+    getgenv().nothing = false
+    Section:NewTextBox("Egg to hatch", "hatches egg", function(txt)
+        Section:NewToggle(txt, "opens " .. txt , function(state)
+            nothing = state
+            game:GetService("RunService").RenderStepped:Connect(function()
+                if nothing then
+                    local args = {
+                        [1] = {
+                            [1] = txt,
+                            [2] = false
+                        }
+                    }
+
+                    workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
+                else
+                    
+                end
+            end)
+        end)
+    end)
+    
+end)
 
      end
             
