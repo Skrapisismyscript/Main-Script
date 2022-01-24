@@ -1,4 +1,4 @@
-repeat wait() until game:IsLoaded()
+
   local id = game.PlaceId
 spawn (function()
     	print("Geting game")
