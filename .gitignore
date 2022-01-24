@@ -1,4 +1,4 @@
-
+wait(5)
   local id = game.PlaceId
 spawn (function()
     	print("Geting game")
