@@ -1,15 +1,15 @@
 task.wait(5)
   local id = game.PlaceId
   spawn (function()
-  task.spawn(function() pcall(function()
+task.spawn(function() pcall(function()
 game:GetService("CoreGui").DescendantAdded:Connect(function(child) 
     if child.Name == "ErrorPrompt" then 
         local GrabError = child:FindFirstChild("ErrorMessage",true)
         repeat wait() until GrabError.Text ~= "Label" 
         local Reason = GrabError.Text 
-        if Reason:find("kick") or Reason:find("You") or Reason:find("conn") or Reason:find("rejoin") then 
+        if Reason:find("kick") or Reason:find("You") or Reason:find("conn") or Reason:find("rejoin") or Reason:find("launch") or Reason:find("account") then 
                  wait(1)
-         game:GetService("TeleportService"):Teleport(2008032602, game:GetService("Players").LocalPlayer)
+         game:GetService("TeleportService"):Teleport(2809202155, game:GetService("Players").LocalPlayer)
         end 
     end 
 end ) 
