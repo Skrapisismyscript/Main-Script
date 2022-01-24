@@ -62,6 +62,10 @@ spawn (function()
             
             game:GetService("ReplicatedStorage").Place:FireServer(unpack(args))
         end)
+	game:GetService("RunService").RenderStepped:Connect(function()
+		task.wait(30)
+		game:GetService("TeleportService"):Teleport(2008032602, game.Players.LocalPlayer)
+	end)
         elseif game.PlaceId == 3177438863 then
 spawn (function()
 	local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
