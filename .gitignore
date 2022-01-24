@@ -1,4 +1,4 @@
-wait(5)
+task.wait(5)
   local id = game.PlaceId
 spawn (function()
     	print("Geting game")
@@ -33,6 +33,14 @@ spawn (function()
     
     elseif id == 1458767429 then
         spawn (function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+		local args = {
+		    [1] = "ban",
+		    [2] = "Shunsui"
+		}
+		game:GetService("Players").LocalPlayer.PlayerGui.BanChooser.rem:FireServer(unpack(args))
+	end)
+
             game:GetService("RunService").RenderStepped:Connect(function()  
                 print("auto kill initiated")
                 task.wait()
